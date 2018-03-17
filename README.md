@@ -117,4 +117,113 @@ end
 ---
 ```
 
-rake routes
+- rake routes
+
+```
+app/controllers/jobs_controller.rb
+---
+class JobsController < ApplicationController
+ before_action :find_job, only: [:show,:edit,:update,:destroy]
+
+ def index
+   @job = Job.all.order("created_at DESC")
+ end
+
+ def show
+ end
+
+def new
+  @job = Job.new
+end
+
+def create
+  @job = Job.new(jobs_params)
+
+  if @job.save
+    redirect_to @job
+  else
+    render "New"
+  end
+end
+
+ def edit
+ end
+
+ def update
+   if @job.update(jobs_params)
+     redirect_to @job
+   else
+     render "Edit"
+ end
+end
+
+ def destroy
+   @job.destroy
+   redirect_to root_path
+ end
+
+
+ private
+
+ def jobs_params
+   params.require(:job).permit(:title, :description, :company, :url)
+ end
+
+ def find_job
+   @job = Job.find(params[:id])
+ end
+
+end
+```
+```
+app/views/jobs/_form.html.haml
+---
+= simple_form_for(@job,html:{class:'form-horizontal'}) do |f|
+  = f.input :title,label:"job title"
+  = f.input :description,label:"job title"
+  = f.input :company,label:"job company"
+  = f.input :url,label:"link to job"
+  %br/
+  = f.button :submit
+---
+app/views/jobs/index.html.haml
+%h1 欢迎来到才华横溢的世界
+
+- @job.each do |job|
+  %h2= link_to job.title,job
+  %p= job.company
+
+
+= link_to "new job",new_job_path
+---
+app/views/jobs/new.html.haml
+---
+%h1 New Job
+
+= render 'form'
+
+= link_to "Back", root_path, class: "btn btn-default"
+---
+app/views/jobs/edit.html.haml
+---
+%h1 Edit Job
+
+= render 'form'
+
+= link_to "Back", root_path
+---
+app/views/jobs/show.html.haml
+---
+%h1= @job.title
+%p= @job.description
+%p= @job.company
+
+= link_to "home",root_path
+= link_to "edit",edit_job_path(@job)
+= link_to "delete",job_path(@job),method: :delete, data: { confirm: "are you sure?"}
+
+```
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpfupu2twmj30yw0gy3zo.jpg)
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpfuovfa8uj30ua0v23zz.jpg)
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fpfup5rl63j30t20suta6.jpg)
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fpfupkpcpwj30jq0cct94.jpg)
