@@ -116,3 +116,5 @@ end
 end
 ---
 ```
+
+rake routes
