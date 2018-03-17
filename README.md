@@ -37,4 +37,5 @@ end
 app/views/jobs/index.html.erb
 <h1>欢迎来到才华横溢的世界</h1>
 ---
+```
 ![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpfluwiv4dj310y0eq0tm.jpg)
