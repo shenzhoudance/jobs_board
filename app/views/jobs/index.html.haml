@@ -1,7 +1,8 @@
 %h1 欢迎来到才华横溢的世界
 
 - @job.each do |job|
-  %h2= job.title
+  %h2= link_to job.title,job
   %p= job.company
+
 
 = link_to "new job",new_job_path
