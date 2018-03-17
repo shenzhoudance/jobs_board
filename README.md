@@ -227,3 +227,10 @@ app/views/jobs/show.html.haml
 ![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpfuovfa8uj30ua0v23zz.jpg)
 ![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fpfup5rl63j30t20suta6.jpg)
 ![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fpfupkpcpwj30jq0cct94.jpg)
+
+```
+git checkout -b category
+rails g categary name:string
+rake db:migrate
+```
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fpfuuefydqj31ei0lg78l.jpg)
