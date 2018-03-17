@@ -1,24 +1,12 @@
-# README
+# 才华横溢 jobs_board 案例教学 7
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+cd workspace
+rails new jobs_board
+cd jobs_board
+git init
+git status
+git add .
+git commit -m "initial commit "
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+git remote add origin https://github.com/shenzhoudance/jobs_board.git
+git push -u origin master
