@@ -232,5 +232,39 @@ app/views/jobs/show.html.haml
 git checkout -b category
 rails g categary name:string
 rake db:migrate
+rails g migration add_category_id_to_jobs category_id:integer
+rake db:migrate
 ```
 ![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fpfuuefydqj31ei0lg78l.jpg)
+
+```
+app/models/job.rb
+---
+class Job < ApplicationRecord
+  belongs_to :category
+end
+
+app/models/category.rb
+---
+class Category < ApplicationRecord
+  has_many :jobs
+end
+```
+```
+rails c
+Category
+Category.connection
+Category.create(name: "Full Time")
+Category.create(name: "Part Time")
+Category.create(name: "Freelance")
+Category.create(name: "Consulting")
+Category.all
+job
+Job
+exit
+---
+```
+![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpfvpjt3d3j31420jsahg.jpg)
+![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fpfvpa1h36j315c0s4doc.jpg)
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpfvp039n6j315s0ratfu.jpg)
+![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fpfvprnyw2j31dc0vagnk.jpg)
