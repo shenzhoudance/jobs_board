@@ -11,3 +11,9 @@ git commit -m "initial commit "
 git remote add origin https://github.com/shenzhoudance/jobs_board.git
 git push -u origin master
 ```
+```
+atom .
+rails server
+http://localhost:3000/
+```
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpflfdsersj316q0xm4nx.jpg)
