@@ -261,6 +261,9 @@ Category.create(name: "Consulting")
 Category.all
 job
 Job
+reload！
+@job = Job.last
+@job = Job.find(1)
 exit
 ---
 ```
@@ -268,3 +271,9 @@ exit
 ![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fpfvpa1h36j315c0s4doc.jpg)
 ![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpfvp039n6j315s0ratfu.jpg)
 ![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fpfvprnyw2j31dc0vagnk.jpg)
+
+
+```
+# 最后效果图：
+
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fpfxzgtbevj31kw0ndgx1.jpg)
