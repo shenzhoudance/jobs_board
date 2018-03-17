@@ -67,3 +67,6 @@ app/views/jobs/index.html.haml
 rails server
 ```
 ![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpfluwiv4dj310y0eq0tm.jpg)
+```
+app/controllers/jobs_controller.rb
+--
