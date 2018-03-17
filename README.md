@@ -17,3 +17,8 @@ rails server
 http://localhost:3000/
 ```
 ![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpflfdsersj316q0xm4nx.jpg)
+
+git checkout -b model_job
+rails g model job title:string description:text company:string url:string
+rake db:migrate
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fpflm7b1e4j31cq0judjv.jpg)
